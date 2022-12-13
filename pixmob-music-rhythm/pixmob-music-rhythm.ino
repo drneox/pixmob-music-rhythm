@@ -31,7 +31,7 @@ void setup() {
 }
 
 void loop() {
-  int randomNumber = random(1, 5);
+  int randomNumber = random(1, 6);
 
   if (digitalRead(microDigital) == HIGH) {
     if (randomNumber == 1) {
@@ -47,8 +47,12 @@ void loop() {
       irsend.sendRaw(pink, 23, 38);
     }
     if (randomNumber == 4){
-      Serial.println("send red code");
+      Serial.println("send blue code");
       irsend.sendRaw(blue, 27, 38);
+    }
+    if (randomNumber == 5){
+      Serial.println("send blue code");
+      irsend.sendRaw(red, 21, 38);
     }
     delay(200);
     Serial.println(randomNumber);
